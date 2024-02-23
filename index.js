@@ -8,6 +8,14 @@ for (const btne of allBtn) {
 
         const selectedArea = document.getElementById("selected-players-container");
 
+        const seatLeft = getClick("seats-left");
+        document.getElementById("seats-left").innerText = seatLeft - 1;
+
+        const seatCount = getClick("seat-Count");
+        document.getElementById("seat-Count").innerText = seatCount + 1
+
+
+
         const div = document.createElement("div");
         div.classList.add("flex");
 
@@ -41,6 +49,10 @@ function updateGrandValue(status) {
             const discount = totalCost * 0.2;
             document.getElementById("grand-cost").innerText = totalCost - discount;
         }
+        else if (couponCode == "couple 20") {
+            const discounted = totalCost * 0.1;
+            document.getElementById("grand-cost").innerText = totalCost - discounted;
+        }
         else {
             alert("please enter a valid coupon code");
         }
@@ -56,8 +68,8 @@ function updatePrice(value) {
     document.getElementById("total-cost").innerText = sum;
 }
 const price = getClick("seat-price");
-// const seatCount = getClick("seat-Count");
-// const seatLeft = getClick("seats-left");
+
+
 
 function getClick(id) {
     const totalNumber = document.getElementById(id).innerText;
