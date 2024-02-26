@@ -1,5 +1,9 @@
 
+
 const allBtn = document.getElementsByClassName("add-btn");
+
+
+
 
 
 for (const btne of allBtn) {
@@ -7,6 +11,24 @@ for (const btne of allBtn) {
         const result = event.target.innerText;
 
         const selectedArea = document.getElementById("selected-players-container");
+
+        event.target.style.backgroundColor = "#1DD100";
+
+
+
+
+
+        if (getClick("seat-Count") + 1 > 4) {
+            alert("limitsea");
+            event.target.style.backgroundColor = "gray";
+            return;
+        }
+
+
+        // if (getClick("seats-left") - 1 < 0) {
+        //     alert("seat ses");
+        //     return;
+        // }
 
         const seatLeft = getClick("seats-left");
         document.getElementById("seats-left").innerText = seatLeft - 1;
@@ -48,10 +70,12 @@ function updateGrandValue(status) {
         if (couponCode == "NEW15") {
             const discount = totalCost * 0.2;
             document.getElementById("grand-cost").innerText = totalCost - discount;
+
         }
-        else if (couponCode == "couple 20") {
+        else if (couponCode == "Couple 20") {
             const discounted = totalCost * 0.1;
             document.getElementById("grand-cost").innerText = totalCost - discounted;
+            document.getElementById("buttonId").disabled = false;
         }
         else {
             alert("please enter a valid coupon code");
@@ -59,6 +83,9 @@ function updateGrandValue(status) {
     }
 
 }
+
+
+
 
 
 function updatePrice(value) {
