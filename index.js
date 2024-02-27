@@ -1,8 +1,7 @@
 
 
 const allBtn = document.getElementsByClassName("add-btn");
-const buttonApply = document.getElementsByClassName("buttonApply");
-buttonApply.addEventListener.disabled = true;
+
 
 
 
